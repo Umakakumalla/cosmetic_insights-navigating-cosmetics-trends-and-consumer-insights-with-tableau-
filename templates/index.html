@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cosmetic Insights</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#FFF5F7;
+overflow-x:hidden;
+}
+
+/* Navbar */
+
+.navbar{
+background:#fff;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+padding:18px 0;
+}
+
+.navbar-brand{
+font-size:28px;
+font-weight:700;
+color:#ff4f87!important;
+}
+
+.nav-link{
+font-size:17px;
+font-weight:500;
+margin-left:20px;
+color:#444!important;
+transition:.3s;
+}
+
+.nav-link:hover{
+color:#ff4f87!important;
+}
+
+.btn-start{
+background:#ff4f87;
+color:#fff;
+padding:10px 25px;
+border-radius:30px;
+font-weight:600;
+text-decoration:none;
+transition:.3s;
+}
+
+.btn-start:hover{
+background:#ff2f70;
+color:#fff;
+}
+
+/* Hero */
+
+.hero{
+padding:90px 0;
+}
+
+.hero h1{
+font-size:52px;
+font-weight:700;
+color:#222;
+line-height:70px;
+}
+
+.hero p{
+font-size:18px;
+color:#666;
+margin:25px 0;
+}
+
+.hero-image img{
+width:100%;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,.12);
+}
+
+.form-select{
+height:60px;
+border-radius:15px;
+}
+
+.btn-pink{
+background:#ff4f87;
+color:#fff;
+padding:15px 40px;
+border:none;
+border-radius:15px;
+font-size:18px;
+font-weight:600;
+margin-top:20px;
+transition:.3s;
+}
+
+.btn-pink:hover{
+background:#ff2d72;
+}
+
+/* Explore */
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title h2{
+font-size:42px;
+font-weight:700;
+}
+
+.section-title p{
+color:#666;
+}
+
+.explore-card{
+background:#fff;
+border-radius:20px;
+padding:35px;
+text-align:center;
+transition:.4s;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+height:100%;
+}
+
+.explore-card:hover{
+transform:translateY(-10px);
+}
+
+.explore-card i{
+font-size:55px;
+color:#ff4f87;
+margin-bottom:20px;
+}
+
+.explore-card h4{
+font-weight:700;
+}
+
+.explore-card a{
+background:#ff4f87;
+color:#fff;
+padding:10px 25px;
+border-radius:30px;
+display:inline-block;
+margin-top:15px;
+text-decoration:none;
+}
+
+/* Stats */
+
+.stats{
+padding:80px 0;
+}
+
+.stat-card{
+background:#fff;
+padding:40px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.stat-card h2{
+font-size:45px;
+font-weight:700;
+color:#ff4f87;
+}
+
+.stat-card p{
+margin-top:10px;
+font-weight:600;
+}
+
+/* Dashboard */
+
+.dashboard{
+padding:90px 0;
+}
+
+iframe{
+width:100%;
+height:900px;
+border:none;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg sticky-top">
+
+<div class="container">
+
+<a class="navbar-brand" href="#">Cosmetic Insights</a>
+
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+
+<ul class="navbar-nav mx-auto">
+
+<li class="nav-item">
+<a class="nav-link active" href="#">Home</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#dashboard">Dashboard</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#story">Story</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#brands">Brands</a>
+</li>
+
+</ul>
+
+<a href="#recommendation" class="btn-start">
+Get Started
+</a>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- Hero -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="row align-items-center">
+
+<div class="col-lg-6">
+
+<h1>
+Cosmetics Insights
+</h1>
+
+<p>
+
+Select your skin type to get personalized product recommendations from our cosmetics dataset.
+
+</p>
+
+<select class="form-select">
+
+<option selected>
+
+Choose Skin Type
+
+</option>
+
+<option>Dry Skin</option>
+
+<option>Oily Skin</option>
+
+<option>Combination Skin</option>
+
+<option>Normal Skin</option>
+
+<option>Sensitive Skin</option>
+
+</select>
+
+<button class="btn-pink">
+
+Get Recommendation
+
+</button>
+
+</div>
+
+<div class="col-lg-6 hero-image">
+
+<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=900" alt="Cosmetics">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Explore -->
+
+<section class="pb-5">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+
+Explore Now
+
+</h2>
+
+<p>
+
+Get started with our recommendation system, dashboards and analytics.
+
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-3">
+
+<div class="explore-card">
+
+<i class="bi bi-house-fill"></i>
+
+<h4>Home</h4>
+
+<p>Get personalized recommendations.</p>
+
+<a href="#">Get Started</a>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="explore-card">
+
+<i class="bi bi-bar-chart-fill"></i>
+
+<h4>Dashboard</h4>
+
+<p>Explore Tableau Dashboard.</p>
+
+<a href="#dashboard">Open</a>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="explore-card">
+
+<i class="bi bi-book-fill"></i>
+
+<h4>Story</h4>
+
+<p>Explore Tableau Story.</p>
+
+<a href="#story">Open</a>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="explore-card">
+
+<i class="bi bi-stars"></i>
+
+<h4>Brands</h4>
+
+<p>Explore Premium Brands.</p>
+
+<a href="#brands">View</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ====================== STATISTICS ====================== -->
+
+<section class="stats">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Cosmetics Dataset Overview</h2>
+
+<p>Quick insights from the Cosmetics dataset.</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-lg-3 col-md-6">
+
+<div class="stat-card">
+
+<i class="bi bi-box-seam-fill text-danger fs-1"></i>
+
+<h2>1472</h2>
+
+<p>Total Products</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="stat-card">
+
+<i class="bi bi-building text-primary fs-1"></i>
+
+<h2>116</h2>
+
+<p>Brands</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="stat-card">
+
+<i class="bi bi-grid-fill text-success fs-1"></i>
+
+<h2>6</h2>
+
+<p>Categories</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="stat-card">
+
+<i class="bi bi-heart-fill text-warning fs-1"></i>
+
+<h2>5</h2>
+
+<p>Skin Types</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= DASHBOARD ================= -->
+<!-- ================= DASHBOARD ================= -->
+
+<section id="dashboard" class="dashboard py-5">
+
+<div class="container-fluid px-5">
+
+<div class="text-center mb-5">
+
+<h2 class="fw-bold display-5 text-dark">
+Interactive Dashboard
+</h2>
+
+<p class="lead text-muted">
+Explore Cosmetics Trends and Consumer Insights through our Tableau Dashboard.
+</p>
+
+</div>
+
+<div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+
+<div class="card-body p-2">
+
+<div class="tableauPlaceholder"
+id="viz1783948223892"
+style="width:100%;height:950px;">
+
+<noscript>
+
+<a href="#">
+
+<img
+alt="Cosmetics Insights Dashboard"
+src="https://public.tableau.com/static/images/Co/CosmeticsInsightsDashboard_17837621079070/Dashboard1/1_rss.png"
+style="border:none;width:100%;"/>
+
+</a>
+
+</noscript>
+
+<object class="tableauViz" style="display:none;">
+
+<param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F"/>
+
+<param name="embed_code_version" value="3"/>
+
+<param name="site_root" value=""/>
+
+<param name="name"
+value="CosmeticsInsightsDashboard_17837621079070/Dashboard1"/>
+
+<param name="tabs" value="no"/>
+
+<param name="toolbar" value="yes"/>
+
+<param name="animate_transition" value="yes"/>
+
+<param name="display_static_image" value="yes"/>
+
+<param name="display_spinner" value="yes"/>
+
+<param name="display_overlay" value="yes"/>
+
+<param name="display_count" value="yes"/>
+
+<param name="language" value="en-US"/>
+
+</object>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="text-center mt-4">
+
+<a href="https://public.tableau.com/views/CosmeticsInsightsDashboard_17837621079070/Dashboard1"
+target="_blank"
+class="btn btn-pink px-5 py-3">
+
+<i class="bi bi-bar-chart-fill"></i>
+
+View Full Dashboard
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+var divElement=document.getElementById('viz1783948223892');
+
+var vizElement=divElement.getElementsByTagName('object')[0];
+
+if(divElement.offsetWidth>1200){
+
+vizElement.style.width="100%";
+
+vizElement.style.height="950px";
+
+}
+
+else if(divElement.offsetWidth>768){
+
+vizElement.style.width="100%";
+
+vizElement.style.height="850px";
+
+}
+
+else{
+
+vizElement.style.width="100%";
+
+vizElement.style.height="700px";
+
+}
+
+var scriptElement=document.createElement('script');
+
+scriptElement.src="https://public.tableau.com/javascripts/api/viz_v1.js";
+
+vizElement.parentNode.insertBefore(scriptElement,vizElement);
+
+</script>
+.dashboard{
+padding:100px 0;
+background:#FFF5F7;
+}
+
+.tableauPlaceholder{
+width:100%;
+margin:auto;
+}
+
+.tableauViz{
+width:100%!important;
+height:950px!important;
+}
+
+.card{
+border-radius:20px;
+overflow:hidden;
+}
+
+<!-- ================= STORY ================= -->
+
+<section id="story" class="dashboard py-5">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Interactive Story</h2>
+
+<p>
+
+Explore the complete data story of Cosmetics Insights.
+
+</p>
+
+</div>
+
+<div class="card shadow-lg border-0 rounded-4 p-4">
+
+<div class="tableauPlaceholder"
+
+id="viz1783948426979"
+
+style="position:relative">
+
+<noscript>
+
+<a href="#">
+
+<img alt="Story"
+
+src="https://public.tableau.com/static/images/Co/CosmeticsInsightsStory_17837621988060/Story1/1_rss.png"
+
+style="border:none"/>
+
+</a>
+
+</noscript>
+
+<object class="tableauViz"
+
+style="display:none;">
+
+<param name="host_url"
+
+value="https%3A%2F%2Fpublic.tableau.com%2F"/>
+
+<param name="embed_code_version"
+
+value="3"/>
+
+<param name="site_root"
+
+value=""/>
+
+<param name="name"
+
+value="CosmeticsInsightsStory_17837621988060/Story1"/>
+
+<param name="tabs"
+
+value="no"/>
+
+<param name="toolbar"
+
+value="yes"/>
+
+<param name="animate_transition"
+
+value="yes"/>
+
+<param name="display_static_image"
+
+value="yes"/>
+
+<param name="display_spinner"
+
+value="yes"/>
+
+<param name="display_overlay"
+
+value="yes"/>
+
+<param name="display_count"
+
+value="yes"/>
+
+<param name="language"
+
+value="en-US"/>
+
+</object>
+
+</div>
+
+<script>
+
+var divElement=document.getElementById('viz1783948426979');
+
+var vizElement=divElement.getElementsByTagName('object')[0];
+
+vizElement.style.width='100%';
+
+vizElement.style.height='980px';
+
+var scriptElement=document.createElement('script');
+
+scriptElement.src='https://public.tableau.com/javascripts/api/viz_v1.js';
+
+vizElement.parentNode.insertBefore(scriptElement,vizElement);
+
+</script>
+
+<div class="text-center mt-4">
+
+<a href="https://public.tableau.com/views/CosmeticsInsightsStory_17837621988060/Story1"
+
+target="_blank"
+
+class="btn btn-pink">
+
+<i class="bi bi-book-fill"></i>
+
+View Story in Tableau Public
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= OUR BRANDS ================= -->
+
+<section id="brands" class="py-5">
+
+<div class="container">
+
+<div class="section-title text-center mb-5">
+
+<h2>Our Premium Brands</h2>
+
+<p>Explore all brands available in the Cosmetics Insights dataset.</p>
+
+</div>
+
+<div class="row g-3">
+
+<!-- Brand Cards -->
+
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">LA MER</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">SK-II</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">DRUNK ELEPHANT</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">IT COSMETICS</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">TATCHA</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">KIEHL'S SINCE 1851</div></div>
+
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">FRESH</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">BELIF</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">SUNDAY RILEY</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">FARMACY</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">FIRST AID BEAUTY</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">CLINIQUE</div></div>
+
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">BAREMINERALS</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">SHISEIDO</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">CHARLOTTE TILBURY</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">ORIGINS</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">OLEHENRIKSEN</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">JOSIE MARAN</div></div>
+
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">FARSÁLI</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">LANEIGE</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">DR. JART+</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">GLOW RECIPE</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">HERBIVORE</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">TARTE</div></div>
+
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">CAUDALIE</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">YOUTH TO THE PEOPLE</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">BIOSSANCE</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">ESTÉE LAUDER</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">SON &amp; PARK</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">AMOREPACIFIC</div></div>
+
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">BOBBI BROWN</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">ERBORIAN</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">SMASHBOX</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">GLAMGLOW</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">PETER THOMAS ROTH</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">JACK BLACK</div></div>
+
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">PHILOSOPHY</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">PERRICONE MD</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">LANCÔME</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">ALGENIST</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">MAKE UP FOR EVER</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">KORRES</div></div>
+
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">MURAD</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">GUERLAIN</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">DIOR</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">KORA ORGANICS</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">DR. DENNIS GROSS SKINCARE</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">REN CLEAN SKINCARE</div></div>
+
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">KOPARI</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">CLARINS</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">NURSE JAMIE</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">LANCER</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">L'OCCITANE</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">KATE SOMERVILLE</div></div>
+
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">SUPERGOOP!</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">SATURDAY SKIN</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">SEPHORA COLLECTION</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">MILK MAKEUP</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">DR. BRANDT SKINCARE</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">J.ONE</div></div>
+
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">KAT VON D</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">TATA HARPER</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">GO-TO</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">BOSCIA</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">EVE LOM</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">MAKEUP ERASER</div></div>
+
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">LAURA MERCIER</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">NEOGEN DERMALOGY</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">INDIE LEE</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">KOH GEN DO</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">VOLITION BEAUTY</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">TOO FACED</div></div>
+
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">SKIN INC SUPPLEMENT BAR</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">NUFACE</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">KLORANE</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">BEAUTYBIO</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">NARS</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">BLITHE</div></div>
+
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">ERNO LASZLO</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">CLARISONIC</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">FENTY BEAUTY BY RIHANNA</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">DERMADOCTOR</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">PEACE OUT</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">BIOEFFECT</div></div>
+
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">BECCA</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">COVER FX</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">MOON JUICE</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">PRIVATE DOCTOR</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">HUM NUTRITION</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">FOREO</div></div>
+
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">LIGHTSTIM</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">COOLA</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">OMOROVICZA</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">SUMMER FRIDAYS</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">SAND &amp; SKY</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">TOO COOL FOR SCHOOL</div></div>
+
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">DR ROEBUCK'S</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">SKIN LAUNDRY</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">ANTHONY</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">ST. TROPEZ TANNING ESSENTIALS</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">NATURALLY SERIOUS</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">WANDER BEAUTY</div></div>
+
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">EDIBLE BEAUTY</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">YVES SAINT LAURENT</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">KENZOKI</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">APIVITA</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">ILIA</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">MDSOLARSCIENCES</div></div>
+
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">MOROCCANOIL</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">TOM FORD</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">KAPLAN MD</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">CANE + AUSTIN</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">BLACK UP</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">VITA LIBERATA</div></div>
+
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">URBAN DECAY</div></div>
+<div class="col-lg-2 col-md-3 col-6"><div class="brand-card">DERMAFLASH</div></div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+.brand-card{
+background:#fff;
+padding:18px;
+text-align:center;
+border-radius:15px;
+font-weight:600;
+box-shadow:0 10px 20px rgba(0,0,0,.08);
+transition:.3s;
+color:#444;
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.brand-card:hover{
+background:#ff4f87;
+color:#fff;
+transform:translateY(-8px);
+box-shadow:0 15px 30px rgba(255,79,135,.35);
+}
+</style>

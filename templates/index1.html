@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cosmetic Insights</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="/">Cosmetic Insights</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="/story">Story</a></li>
+            <li class="nav-item"><a class="nav-link" href="/recommendation">Recommendation</a></li>
+            <li class="nav-item"><a class="nav-link" href="/brands">Our Brands</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="py-5 bg-gradient-pink">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h1 class="display-6 fw-bold">Cosmetics Recommendation System</h1>
+            <p class="lead mb-4">Explore cosmetic trends and consumer insights using interactive Tableau dashboards.</p>
+            <a href="/dashboard" class="btn btn-primary btn-lg">Explore Dashboard</a>
+          </div>
+          <div class="col-lg-6 text-center d-none d-lg-block">
+            <img src="https://www.google.com/imgres?q=cosmetics&imgurl=https%3A%2F%2Fdutchuncles.in%2Fwp-content%2Fuploads%2F2022%2F02%2FUntitled-design-57.jpg&imgrefurl=https%3A%2F%2Fdutchuncles.in%2Finspire%2Fsugar-cosmetics-breaking-the-foreign-dominance-in-beauty-and-cosmetics%2F&docid=4K1QP7TgGg0ffM&tbnid=EYAsTh8oolGBtM&vet=12ahUKEwj0htHm986VAxWDwjgGHRjbNgEQnPAOegUI6AQQAA..i&w=1720&h=920&hcb=2&ved=2ahUKEwj0htHm986VAxWDwjgGHRjbNgEQnPAOegUI6AQQAA>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="py-5">
+      <div class="container">
+        <div class="row text-center g-4">
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm rounded-lg card-hover">
+              <div class="card-body">
+                <i class="bi bi-database-fill display-6 text-pink"></i>
+                <h5 class="card-title mt-3">Dataset</h5>
+                <p class="card-text">View cosmetics dataset.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm rounded-lg card-hover">
+              <div class="card-body">
+                <i class="bi bi-speedometer2 display-6 text-pink"></i>
+                <h5 class="card-title mt-3">Dashboard</h5>
+                <p class="card-text">Open Tableau Dashboard.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm rounded-lg card-hover">
+              <div class="card-body">
+                <i class="bi bi-book-fill display-6 text-pink"></i>
+                <h5 class="card-title mt-3">Story</h5>
+                <p class="card-text">Open Tableau Story.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <h3 class="mb-4">Recommendation</h3>
+            <div class="card shadow-sm rounded-lg p-4">
+              <h5>Discover Product</h5>
+              <p class="mb-3">Find products recommended for you.</p>
+              <a href="/recommendation" class="btn btn-outline-pink">Recommend</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-4 text-center">
+      <div class="container">
+        <small>Cosmetic Insights © 2026</small>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Cosmetic Insights</title>
+  <meta name="description" content="Luxury cosmetics analytics dashboard built with the eBusiness Bootstrap framework.">
+  <meta name="keywords" content="cosmetics, analytics, tableau, dashboard">
+
+  <link href="{{ url_for('static', filename='img/favicon.png') }}" rel="icon">
+  <link href="{{ url_for('static', filename='img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+
+  <style>
+    :root {
+      --luxury-pink: #ff5ea8;
+      --luxury-rose: #ff7aa2;
+      --luxury-blush: #ffb3c6;
+      --luxury-plum: #b24c7d;
+      --luxury-gold: #ffd166;
+      --glass: rgba(255, 255, 255, 0.86);
+      --ink: #3b1731;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fff3f8 0%, #ffe9f1 100%);
+      color: var(--ink);
+    }
+
+    .header {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 10px 40px rgba(255, 94, 168, 0.12);
+    }
+
+    .hero-section {
+      padding: 5rem 0 3rem;
+      background: linear-gradient(135deg, rgba(255, 94, 168, 0.12), rgba(255, 179, 198, 0.16));
+    }
+
+    .section-title h2,
+    .section-title h3 {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .metric-card {
+      border: 0;
+      border-radius: 1.5rem;
+      padding: 1.4rem;
+      color: #fff;
+      min-height: 150px;
+      box-shadow: 0 14px 40px rgba(30, 32, 62, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(255,255,255,0.22), rgba(255,255,255,0));
+      pointer-events: none;
+    }
+
+    .gradient-pink { background: linear-gradient(135deg, var(--luxury-pink), var(--luxury-plum)); }
+    .gradient-rose { background: linear-gradient(135deg, var(--luxury-rose), var(--luxury-blush)); }
+    .gradient-gold { background: linear-gradient(135deg, var(--luxury-blush), var(--luxury-gold)); }
+    .gradient-blush { background: linear-gradient(135deg, var(--luxury-plum), var(--luxury-pink)); }
+
+    .tableau-card {
+      background: var(--glass);
+      border: 1px solid rgba(118, 75, 162, 0.12);
+      border-radius: 1.7rem;
+      box-shadow: 0 20px 45px rgba(34, 24, 53, 0.08);
+    }
+
+    .tableau-panel {
+      border-radius: 1.2rem;
+      background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(250, 248, 255, 0.95));
+      border: 1px solid rgba(102, 126, 234, 0.12);
+      padding: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .tableau-shell {
+      border-radius: 1rem;
+      background: linear-gradient(135deg, rgba(248, 245, 255, 0.95), rgba(255, 255, 255, 0.98));
+      padding: 0.75rem;
+      min-height: 650px;
+      overflow: hidden;
+    }
+
+    .search-panel {
+      background: var(--glass);
+      border-radius: 1.25rem;
+      border: 1px solid rgba(102, 126, 234, 0.12);
+      box-shadow: 0 16px 38px rgba(34, 24, 53, 0.08);
+    }
+
+    .btn-pink {
+      background: linear-gradient(135deg, var(--luxury-pink), var(--luxury-plum));
+      color: #fff;
+      border: 0;
+      border-radius: 999px;
+      padding: 0.75rem 1.2rem;
+      font-weight: 600;
+    }
+
+    .btn-outline-pink {
+      border: 1px solid var(--luxury-pink);
+      color: var(--luxury-plum);
+      border-radius: 999px;
+      padding: 0.75rem 1.2rem;
+      font-weight: 600;
+      background: #fff;
+    }
+
+    .table thead {
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.12), rgba(118, 75, 162, 0.14));
+    }
+
+    .table-hover tbody tr:hover {
+      background-color: rgba(102, 126, 234, 0.06);
+    }
+  </style>
+</head>
+
+<body class="index-page">
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <img src="https://www.indaru.com/wp-content/uploads/2023/06/high-angle-view-cosmetic-beauty-products-white-backdrop-scaled.jpg" alt="Cosmetic logo" class="img-fluid" style="height:48px; object-fit:contain;">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#dashboard" class="active">Dashboard</a></li>
+          <li><a href="#tableau-view">Tableau View</a></li>
+          <li><a href="#dataset-view">Dataset View</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="#dataset-view">Open Registry</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <section id="dashboard" class="hero-section section">
+      <div class="container" data-aos="fade-up">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="section-title text-start mb-4">
+              <h2>Premium Cosmetics Analytics Dashboard</h2>
+              <p class="lead text-muted mb-0">A polished luxury cosmetic performance overview designed for premium product discovery and performance tracking.</p>
+              <div class="d-flex flex-wrap gap-2 mt-3">
+                  <a href="#tableau-view" class="btn btn-pink">Explore Dashboard</a>
+                  <a href="#dataset-view" class="btn btn-outline-pink">View Registry</a>
+                </div>
+              </div>
+
+              <div class="text-center my-4">
+                <img src="{{ url_for('static', filename='img/hero-carousel/hero-carousel-1.jpg') }}" alt="Makeup brushes and cosmetics" class="img-fluid rounded" style="max-width:720px; width:100%; height:auto;">
+              </div>
+
+              <div class="row g-3 mt-2">
+              <div class="col-12 col-md-6">
+                <div class="metric-card gradient-pink">
+                  <p class="mb-2 fw-semibold">Product Categories</p>
+                  <h3 class="display-6 fw-bold mb-1">8+</h3>
+                  <p class="mb-0 small opacity-75">Serums, creams, cleansers, and masks</p>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="metric-card gradient-rose">
+                  <p class="mb-2 fw-semibold">Luxury Premium</p>
+                  <h3 class="display-6 fw-bold mb-1">$325+</h3>
+                  <p class="mb-0 small opacity-75">High-end product price spectrum</p>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="metric-card gradient-gold">
+                  <p class="mb-2 fw-semibold">Avg Rating</p>
+                  <h3 class="display-6 fw-bold mb-1">4.3/5.0</h3>
+                  <p class="mb-0 small opacity-75">Average customer sentiment index</p>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="metric-card gradient-blush">
+                  <p class="mb-2 fw-semibold">Skin Types</p>
+                  <h3 class="display-6 fw-bold mb-1">5+</h3>
+                  <p class="mb-0 small opacity-75">Dry, oily, sensitive, combination, and mature</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="tableau-card p-3 p-lg-4">
+              <img src="https://www.indaru.com/wp-content/uploads/2023/06/high-angle-view-cosmetic-beauty-products-white-backdrop-scaled.jpg" alt="Makeup brushes and cosmetic tools" class="img-fluid rounded-4 w-100" style="height: 420px; object-fit: cover;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tableau-view" class="section py-5">
+      <div class="container">
+        <div class="tableau-card p-4 p-lg-5">
+          <div class="section-title mb-4">
+            <h3>Tableau Interactive Track Dashboard View</h3>
+            <p class="text-muted mb-0">Drop in your preserved visualization embed script without disrupting the dashboard shell.</p>
+          </div>
+
+          <div class="tableau-panel">
+            <h5 class="fw-bold mb-3">Tableau Interactive Track Dashboard View</h5>
+            <div class="tableau-shell">
+              <!-- PASTE YOUR COPIED TABLEAU EMBED CODE DIRECTLY HERE -->
+              <div class='tableauPlaceholder' id='viz1783849328653' style='position: relative'><noscript><a href='#'><img alt='Cosmetics Insights Dashboard ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;CosmeticsInsightsDashboard_17837621079070&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='CosmeticsInsightsDashboard_17837621079070&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;CosmeticsInsightsDashboard_17837621079070&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>
+              <script type='text/javascript'>
+                var divElement = document.getElementById('viz1783849328653');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1366px';vizElement.style.height='795px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1366px';vizElement.style.height='795px';} else { vizElement.style.width='100%';vizElement.style.height='3127px';}
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+              </script>
+            </div>
+          </div>
+
+          <div class="tableau-panel">
+            <h5 class="fw-bold mb-3">Tableau Narrative Presentation Story View</h5>
+            <div class="tableau-shell">
+              <!-- PASTE YOUR COPIED TABLEAU EMBED CODE DIRECTLY HERE -->
+              <div class='tableauPlaceholder' id='viz1783849402416' style='position: relative'><noscript><a href='#'><img alt='Story 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;CosmeticsInsightsStory_17837621988060&#47;Story1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='CosmeticsInsightsStory_17837621988060&#47;Story1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;CosmeticsInsightsStory_17837621988060&#47;Story1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>
+              <script type='text/javascript'>
+                var divElement = document.getElementById('viz1783849402416');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                vizElement.style.width='1016px';vizElement.style.height='991px';
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dataset-view" class="section py-5">
+      <div class="container">
+        <div class="search-panel p-4 p-lg-5">
+          <div class="section-title mb-4">
+            <h3>Product Directory Registry Filter Lookup</h3>
+            <p class="text-muted mb-0">Search by brand or product name in real time to explore the cosmetics registry.</p>
+          </div>
+
+          <div class="mb-4">
+            <label for="productFilter" class="form-label fw-semibold">Live Search Filter</label>
+            <input type="text" id="productFilter" class="form-control form-control-lg rounded-pill" placeholder="Search by brand or product name" onkeyup="filterProducts()">
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-hover align-middle">
+              <thead>
+                <tr>
+                  <th>Label</th>
+                  <th>Brand</th>
+                  <th>Product Name</th>
+                  <th>Price</th>
+                  <th>Rank</th>
+                  <th>Core Ingredient Profile</th>
+                  <th>Skin Type Compatibilities</th>
+                </tr>
+              </thead>
+              <tbody id="productTableBody">
+                <tr>
+                  <td>Luxury</td>
+                  <td>La Mer</td>
+                  <td>Crème de la Mer</td>
+                  <td>$325</td>
+                  <td>#1</td>
+                  <td>Sea kelp, Miracle Broth</td>
+                  <td>Dry, Mature</td>
+                </tr>
+                <tr>
+                  <td>Premium</td>
+                  <td>SK-II</td>
+                  <td>Facial Treatment Essence</td>
+                  <td>$185</td>
+                  <td>#2</td>
+                  <td>Pitera, Galactomyces</td>
+                  <td>Dry, Combination</td>
+                </tr>
+                <tr>
+                  <td>Editor Pick</td>
+                  <td>Drunk Elephant</td>
+                  <td>Protini Polypeptide Cream</td>
+                  <td>$68</td>
+                  <td>#3</td>
+                  <td>Signal Peptides, Pygmy Sandgrass</td>
+                  <td>Normal, Sensitive</td>
+                </tr>
+                <tr>
+                  <td>Signature</td>
+                  <td>Tatcha</td>
+                  <td>The Dewy Skin Cream</td>
+                  <td>$72</td>
+                  <td>#4</td>
+                  <td>Japanese Purple Rice, Hadasei-3</td>
+                  <td>Dry, Combination</td>
+                </tr>
+                <tr>
+                  <td>Wellness</td>
+                  <td>Belif</td>
+                  <td>The True Cream Aqua Bomb</td>
+                  <td>$38</td>
+                  <td>#5</td>
+                  <td>Panthenol, Comfrey Leaf</td>
+                  <td>Oily, Combination</td>
+                </tr>
+                <tr>
+                  <td>Trend</td>
+                  <td>Augustinus Bader</td>
+                  <td>The Rich Cream</td>
+                  <td>$205</td>
+                  <td>#6</td>
+                  <td>TFC8, Squalane</td>
+                  <td>Dry, Sensitive</td>
+                </tr>
+                <tr>
+                  <td>Ritual</td>
+                  <td>Chanel</td>
+                  <td>Le Lift Cream</td>
+                  <td>$180</td>
+                  <td>#7</td>
+                  <td>Camellia Alba, Iris</td>
+                  <td>Mature, Normal</td>
+                </tr>
+                <tr>
+                  <td>Glow</td>
+                  <td>Charlotte Tilbury</td>
+                  <td>Magic Cream</td>
+                  <td>$85</td>
+                  <td>#8</td>
+                  <td>Rosehip Oil, Hyaluronic Acid</td>
+                  <td>Dry, Sensitive</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer dark-background py-4 mt-3">
+    <div class="container text-center text-white-50">
+      <p class="mb-0">Cosmetics Insights • Premium analytics experience • Tableau-ready layout shell</p>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/purecounter/purecounter_vanilla.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+  <script>
+    function filterProducts() {
+      var input = document.getElementById('productFilter');
+      var filter = input.value.toLowerCase();
+      var rows = document.querySelectorAll('#productTableBody tr');
+      var hasVisibleRow = false;
+
+      rows.forEach(function (row) {
+        var text = row.textContent.toLowerCase();
+        var match = text.indexOf(filter) !== -1;
+        row.style.display = match ? '' : 'none';
+        if (match) {
+          hasVisibleRow = true;
+        }
+      });
+
+      var existingEmptyState = document.getElementById('emptyStateRow');
+      if (existingEmptyState) {
+        existingEmptyState.remove();
+      }
+
+      if (!hasVisibleRow && filter.length > 0) {
+        var tbody = document.getElementById('productTableBody');
+        var emptyRow = document.createElement('tr');
+        emptyRow.id = 'emptyStateRow';
+        emptyRow.innerHTML = '<td colspan="7" class="text-center text-muted py-4">No matching cosmetic products found.</td>';
+        tbody.appendChild(emptyRow);
+      }
+    }
+  </script>
+</body>
+
+</html>
